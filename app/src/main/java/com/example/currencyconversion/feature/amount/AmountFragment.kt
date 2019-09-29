@@ -1,18 +1,13 @@
 package com.example.currencyconversion.feature.amount
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
 import androidx.databinding.DataBindingUtil
-
+import androidx.fragment.app.Fragment
 import com.example.currencyconversion.R
 import com.example.currencyconversion.databinding.FragmentAmountBinding
-import com.example.currencyconversion.databinding.FragmentCurrencyBinding
-import com.example.currencyconversion.feature.currency.CurrencyViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AmountFragment : Fragment() {

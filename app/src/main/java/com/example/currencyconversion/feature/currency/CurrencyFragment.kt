@@ -1,23 +1,15 @@
 package com.example.currencyconversion.feature.currency
 
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
-import android.widget.SimpleAdapter
-import androidx.cursoradapter.widget.SimpleCursorAdapter
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.RecyclerView
-
 import com.example.currencyconversion.R
 import com.example.currencyconversion.databinding.FragmentCurrencyBinding
-import com.example.currencyconversion.databinding.FragmentRateBinding
-import com.example.currencyconversion.feature.rate.RateController
-import com.example.currencyconversion.feature.rate.RateViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class CurrencyFragment : Fragment() {

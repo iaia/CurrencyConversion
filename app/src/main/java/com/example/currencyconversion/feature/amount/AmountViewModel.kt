@@ -1,9 +1,7 @@
 package com.example.currencyconversion.feature.amount
 
-import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import java.lang.Exception
 
 class AmountViewModel : ViewModel() {
     val amount = MutableLiveData<Float>().apply {
