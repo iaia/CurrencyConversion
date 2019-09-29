@@ -33,7 +33,6 @@ class RateFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext())
             adapter = controller.adapter
         }
-        viewModel.init()
         return binding.root
     }
 
