@@ -16,8 +16,8 @@ android {
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
 
-        buildConfigField("String", "CURRENCY_LAYER_API_URL", "http://apilayer.net/api/")
-        buildConfigField("String", "CURRENCY_LAYER_API_KEY", System.getenv("CURRENCY_LAYER_API_KEY"))
+        buildConfigField("String", "CURRENCY_LAYER_API_URL", "\"http://apilayer.net/api/\"")
+        buildConfigField("String", "CURRENCY_LAYER_API_KEY", "\"${System.getenv('CURRENCY_LAYER_API_KEY')}\"")
     }
 
     buildTypes {
