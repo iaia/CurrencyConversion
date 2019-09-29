@@ -1,6 +1,7 @@
 package com.example.currencyconversion
 
 import android.app.Application
+import com.example.currencyconversion.di.fragmentViewModelModule
 import com.example.currencyconversion.di.viewModelModule
 import com.example.data.di.apiModule
 import com.example.data.di.databaseModule
@@ -19,10 +20,10 @@ class MyApplication : Application() {
             modules(
                 listOf(
                     viewModelModule,
+                    fragmentViewModelModule,
                     apiModule,
                     repositoryModule,
                     databaseModule
-                    //fragmentViewModelModule,
                     //mockApiModule,
                 )
             )

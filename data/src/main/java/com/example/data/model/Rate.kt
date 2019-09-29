@@ -1,13 +1,14 @@
 package com.example.data.model
 
+import androidx.room.Entity
 import kotlinx.serialization.Serializable
 
-
 @Serializable
+@Entity(primaryKeys = ["dist", "source"])
 data class Rate(
-    val dist: String,
-    val source: String,
-    val rate: Float,
-    val timestamp: Long
+    var dist: String,
+    var source: String,
+    var rate: Float,
+    var timestamp: Long
 )
 

@@ -1,15 +1,17 @@
 package com.example.data.model
 
+import androidx.room.Entity
 import androidx.room.Ignore
 import kotlinx.serialization.Serializable
 
-
 @Serializable
+@Entity(primaryKeys = ["timestamp", "source"])
 data class Live(
-    val success: Boolean,
-    val timestamp: Long,
-    val source: String,
+    var success: Boolean,
+    var timestamp: Long,
+    var source: String,
     @Ignore
-    val quotes: Map<String, Float>
-)
-
+    var quotes: Map<String, Float>
+) {
+    constructor(): this(false, 0, "", mapOf())
+}

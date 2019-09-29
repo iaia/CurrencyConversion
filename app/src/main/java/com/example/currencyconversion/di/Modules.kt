@@ -1,17 +1,15 @@
 package com.example.currencyconversion.di
 
 import com.example.currencyconversion.feature.main.MainViewModel
+import com.example.currencyconversion.feature.rate.RateViewModel
 import org.koin.dsl.module
 
 import org.koin.androidx.viewmodel.dsl.viewModel
 
 val viewModelModule = module {
-    viewModel { MainViewModel(get()) }
+    viewModel { MainViewModel() }
 }
 
-/*
 val fragmentViewModelModule = module {
-    viewModel { MainFragmentViewModel() }
-    viewModel { CameraViewModel() }
+    viewModel { RateViewModel(get()) }
 }
-*/

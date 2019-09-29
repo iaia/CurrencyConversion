@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_rate"
+    app:startDestination="@id/rateFragment">
+
+    <fragment
+        android:id="@+id/rateFragment"
+        android:name="com.example.currencyconversion.feature.rate.RateFragment"
+        android:label="RateFragment" />
+</navigation>

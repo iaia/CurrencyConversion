@@ -23,5 +23,6 @@ val repositoryModule = module {
 
 val databaseModule = module {
     single { CurrencyDatabase.getDatabase(get()) }
+    single { get<CurrencyDatabase>().liveDao() }
     single { get<CurrencyDatabase>().rateDao() }
 }
