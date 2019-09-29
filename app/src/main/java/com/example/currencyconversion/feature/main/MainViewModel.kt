@@ -10,11 +10,10 @@ import kotlinx.coroutines.launch
 class MainViewModel(
     private val liveRepository: LiveRepository
 ): ViewModel() {
-    var hello = MutableLiveData<String>()
 
     init {
         viewModelScope.launch(Dispatchers.IO) {
-            hello.postValue(liveRepository.getLive())
+            liveRepository.getLive()
         }
     }
 }

@@ -3,6 +3,7 @@ package com.example.currencyconversion
 import android.app.Application
 import com.example.currencyconversion.di.viewModelModule
 import com.example.data.di.apiModule
+import com.example.data.di.databaseModule
 import com.example.data.di.repositoryModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -19,10 +20,10 @@ class MyApplication : Application() {
                 listOf(
                     viewModelModule,
                     apiModule,
-                    repositoryModule
+                    repositoryModule,
+                    databaseModule
                     //fragmentViewModelModule,
                     //mockApiModule,
-                    //databaseModule
                 )
             )
         }

@@ -1,5 +1,6 @@
 package com.example.data.di
 
+import com.example.data.db.CurrencyDatabase
 import com.example.data.remote.CurrencyLayerClient
 import com.example.data.repository.LiveRepository
 import com.example.data.repository.LiveRepositoryImpl
@@ -17,12 +18,10 @@ val mockApiModule = module {
 */
 
 val repositoryModule = module {
-    single<LiveRepository> { LiveRepositoryImpl(get()) }
+    single<LiveRepository> { LiveRepositoryImpl(get(), get(), get()) }
 }
 
-/*
 val databaseModule = module {
-    single { DummyDatabase.getDatabase(get()) }
-    single { get<DummyDatabase>().employeeDao() }
+    single { CurrencyDatabase.getDatabase(get()) }
+    single { get<CurrencyDatabase>().rateDao() }
 }
-*/
