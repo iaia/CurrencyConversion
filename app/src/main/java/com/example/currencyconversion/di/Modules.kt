@@ -1,5 +1,6 @@
 package com.example.currencyconversion.di
 
+import com.example.currencyconversion.feature.amount.AmountViewModel
 import com.example.currencyconversion.feature.currency.CurrencyViewModel
 import com.example.currencyconversion.feature.main.MainViewModel
 import com.example.currencyconversion.feature.rate.RateViewModel
@@ -14,4 +15,5 @@ val viewModelModule = module {
 val fragmentViewModelModule = module {
     viewModel { RateViewModel(get()) }
     viewModel { CurrencyViewModel(get()) }
+    viewModel { AmountViewModel() }
 }
