@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="dist" type="String" />
+        <variable name="rate" type="String" />
+        <variable name="culcResult" type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="8dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_dist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dist}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tv_rate"
+            tools:text="JPY"
+            />
+
+        <TextView
+            android:id="@+id/tv_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{rate}"
+            app:layout_constraintTop_toTopOf="@id/tv_dist"
+            app:layout_constraintBottom_toBottomOf="@id/tv_dist"
+            app:layout_constraintStart_toEndOf="@id/tv_dist"
+            app:layout_constraintEnd_toStartOf="@id/tv_result"
+            tools:text="107.12345"
+            />
+
+        <TextView
+            android:id="@+id/tv_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{culcResult}"
+            app:layout_constraintTop_toTopOf="@id/tv_dist"
+            app:layout_constraintBottom_toBottomOf="@id/tv_dist"
+            app:layout_constraintStart_toEndOf="@id/tv_rate"
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:text="1234.5678"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

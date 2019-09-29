@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
-
 apply plugin: 'kotlin-android'
-
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
 android {
     compileSdkVersion 28
     defaultConfig {
@@ -24,6 +24,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
     implementation(project(":data"))
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -41,8 +45,13 @@ dependencies {
     implementation("org.koin:koin-androidx-scope:2.0.0")
     implementation("org.koin:koin-androidx-ext:2.0.0")
 
+    // epoxy
+    implementation 'com.airbnb.android:epoxy:3.8.0'
+    kapt("com.airbnb.android:epoxy-processor:3.8.0")
+    implementation("com.airbnb.android:epoxy-databinding:3.8.0")
+
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.lifecycle:lifecycle-extensions:2.0.0'
+    implementation 'androidx.lifecycle:lifecycle-extensions:2.1.0'
     testImplementation 'junit:junit:4.12'
 
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

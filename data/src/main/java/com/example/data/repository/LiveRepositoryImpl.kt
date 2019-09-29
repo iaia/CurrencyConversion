@@ -10,10 +10,10 @@ class LiveRepositoryImpl(
     private val rateDao: RateDao,
     private val service: CurrencyLayerService
 ) : LiveRepository {
-    override suspend fun getLive(): List<Rate> {
+    override suspend fun getRates(): List<Rate> {
         liveDao.getRecent(getCurrentTimestamp() - (30 * 60)).apply {
             if (this == null) {
-                //fetchLive()
+                fetchLive()
             }
             return rateDao.getAll()
         }
@@ -30,6 +30,7 @@ class LiveRepositoryImpl(
                         it.key.removePrefix(this.source),
                         this.source,
                         it.value,
+                        0F,
                         this.timestamp
                     )
                 })
