@@ -14,13 +14,26 @@
         tools:context=".feature.main.MainActivity">
 
         <fragment
+            android:id="@+id/fragment_currency"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:name="androidx.navigation.fragment.NavHostFragment"
+            app:navGraph="@navigation/nav_currency"
+            app:defaultNavHost="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/fragment_container"
+            />
+
+        <fragment
             android:id="@+id/fragment_container"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:name="androidx.navigation.fragment.NavHostFragment"
             app:navGraph="@navigation/nav_rate"
             app:defaultNavHost="true"
-            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fragment_currency"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />

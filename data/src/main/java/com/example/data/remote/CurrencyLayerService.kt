@@ -10,6 +10,6 @@ interface CurrencyLayerService {
     @GET("live?access_key=${BuildConfig.CURRENCY_LAYER_API_KEY}&format=1")
     suspend fun getLive(): Response<Live>
 
-    @GET("currencies?access_key=${BuildConfig.CURRENCY_LAYER_API_KEY}&format=1")
+    @GET("list?access_key=${BuildConfig.CURRENCY_LAYER_API_KEY}&format=1")
     suspend fun getCurrencies(): Response<CurrenciesResult>
 }

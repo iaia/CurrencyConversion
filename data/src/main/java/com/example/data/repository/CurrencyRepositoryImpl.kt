@@ -12,6 +12,7 @@ class CurrencyRepositoryImpl(
     private val service: CurrencyLayerService
 ) : CurrencyRepository {
     override suspend fun getCurrencies(): List<Currency> {
+        // 更新できない
         return currencyDao.getAll().let {
             if (it == null || it.isEmpty()) {
                 fetchCurrencies()
