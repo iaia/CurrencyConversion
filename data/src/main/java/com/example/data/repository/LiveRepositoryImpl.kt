@@ -7,7 +7,7 @@ class LiveRepositoryImpl(
 ) : LiveRepository {
     override suspend fun getLive(): String {
         service.getLive().body().apply {
-            return this ?: "failed"
+            return this?.success.toString()
         }
     }
 }
