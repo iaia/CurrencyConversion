@@ -13,5 +13,5 @@ data class Live(
     @Ignore
     var quotes: Map<String, Float>
 ) {
-    constructor(): this(false, 0, "", mapOf())
+    constructor() : this(false, 0, "", mapOf())
 }

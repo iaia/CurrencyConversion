@@ -14,5 +14,5 @@ data class Rate(
     var calcResult: Float,
     var timestamp: Long
 ) {
-    constructor(): this("", "", 0F, 0F, 0L)
+    constructor() : this("", "", 0F, 0F, 0L)
 }
