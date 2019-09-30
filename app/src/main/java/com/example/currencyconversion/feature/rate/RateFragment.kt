@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.currencyconversion.R
@@ -43,6 +44,11 @@ class RateFragment : Fragment() {
             setRecycledViewPool(sharedViewPool)
             layoutManager = LinearLayoutManager(requireContext())
             adapter = controller.adapter
+            val dividerItemDecoration = DividerItemDecoration(
+                context,
+                LinearLayoutManager(requireActivity()).orientation
+            )
+            addItemDecoration(dividerItemDecoration)
         }
         return binding.root
     }

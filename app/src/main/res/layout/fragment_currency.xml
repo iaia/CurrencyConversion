@@ -14,6 +14,14 @@
         android:layout_height="wrap_content"
         tools:context=".feature.currency.CurrencyFragment">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Source Currency"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/s_currencies" />
+
         <Spinner
             android:id="@+id/s_currencies"
             android:layout_width="wrap_content"

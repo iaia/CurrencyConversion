@@ -1,22 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-
-        <variable
-            name="dist"
-            type="String" />
-
-        <variable
-            name="rate"
-            type="String" />
-
-        <variable
-            name="culcResult"
-            type="String" />
-    </data>
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -27,19 +11,18 @@
             android:id="@+id/tv_dist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{dist}"
+            android:text="Dist"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/tv_rate"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:gravity="end"
-            tools:text="JPY" />
+            android:gravity="end" />
 
         <TextView
             android:id="@+id/tv_rate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{rate}"
+            android:text="Rate"
             app:layout_constraintBottom_toBottomOf="@id/tv_dist"
             app:layout_constraintEnd_toStartOf="@id/tv_result"
             app:layout_constraintStart_toEndOf="@id/tv_dist"
@@ -47,14 +30,13 @@
             android:gravity="end"
             android:maxLines="1"
             android:minWidth="120sp"
-            android:maxWidth="120sp"
-            tools:text="107.12345" />
+            android:maxWidth="120sp" />
 
         <TextView
             android:id="@+id/tv_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{culcResult}"
+            android:text="Calculate Result"
             app:layout_constraintBottom_toBottomOf="@id/tv_dist"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/tv_rate"
@@ -62,8 +44,7 @@
             android:gravity="end"
             android:maxLines="1"
             android:minWidth="120sp"
-            android:maxWidth="120sp"
-            tools:text="1234.5678" />
+            android:maxWidth="120sp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
