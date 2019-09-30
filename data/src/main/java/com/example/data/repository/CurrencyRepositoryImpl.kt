@@ -1,10 +1,7 @@
 package com.example.data.repository
 
 import com.example.data.db.dao.CurrencyDao
-import com.example.data.db.dao.LiveDao
-import com.example.data.db.dao.RateDao
 import com.example.data.model.Currency
-import com.example.data.model.Rate
 import com.example.data.remote.CurrencyLayerService
 
 class CurrencyRepositoryImpl(

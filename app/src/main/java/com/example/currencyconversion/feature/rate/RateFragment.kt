@@ -11,10 +11,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.currencyconversion.R
 import com.example.currencyconversion.databinding.FragmentRateBinding
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class RateFragment : Fragment() {
     private val viewModel: RateViewModel by viewModel()
+    private val sharedViewModel: SharedViewModel by sharedViewModel()
     private lateinit var binding: FragmentRateBinding
     private lateinit var controller: RateController
     private val sharedViewPool = RecyclerView.RecycledViewPool()
@@ -28,6 +30,12 @@ class RateFragment : Fragment() {
         controller = RateController()
         viewModel.rates.observe(viewLifecycleOwner, Observer {
             controller.setData(it)
+        })
+        sharedViewModel.currency.observe(viewLifecycleOwner, Observer {
+            viewModel.reGetRate(it)
+        })
+        sharedViewModel.amount.observe(viewLifecycleOwner, Observer {
+            viewModel.reCalc(it)
         })
         binding.rvRates.apply {
             clipChildren = false

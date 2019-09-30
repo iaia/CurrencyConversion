@@ -11,10 +11,15 @@ class CurrencyViewModel(
     private val currencyRepository: CurrencyRepository
 ) : ViewModel() {
     val currencies = MutableLiveData<List<String>>()
+    val selectedCurrency = MutableLiveData<String>()
 
     fun init() {
         viewModelScope.launch(Dispatchers.IO) {
             currencies.postValue(currencyRepository.getCurrencies().map { it.code })
         }
+    }
+
+    fun selectCurrency(position: Int) {
+        selectedCurrency.postValue(currencies.value?.get(position))
     }
 }

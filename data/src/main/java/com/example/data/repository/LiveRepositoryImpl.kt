@@ -4,23 +4,26 @@ import com.example.data.db.dao.LiveDao
 import com.example.data.db.dao.RateDao
 import com.example.data.model.Rate
 import com.example.data.remote.CurrencyLayerService
+import com.example.data.remote.paramsCreator
 
 class LiveRepositoryImpl(
     private val liveDao: LiveDao,
     private val rateDao: RateDao,
     private val service: CurrencyLayerService
 ) : LiveRepository {
-    override suspend fun getRates(): List<Rate> {
-        liveDao.getRecent(getCurrentTimestamp() - (30 * 60)).apply {
+    override suspend fun getRates(currency: String): List<Rate> {
+        //, getCurrentTimestamp() - (30 * 60)
+        liveDao.getRecent("USD").apply {
             if (this == null) {
-                fetchLive()
+                fetchLive(currency)
             }
             return rateDao.getAll()
         }
     }
 
-    private suspend fun fetchLive() {
-        service.getLive().body().apply {
+    private suspend fun fetchLive(currency: String) {
+        // service.getLive(paramsCreator(mapOf("source" to currency))).body().apply {
+        service.getLive(paramsCreator()).body().apply {
             if (this == null) {
                 // do something
             } else {

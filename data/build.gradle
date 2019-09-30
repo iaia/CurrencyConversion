@@ -55,6 +55,9 @@ dependencies {
     kapt("androidx.room:room-compiler:2.1.0")
     androidTestImplementation("androidx.room:room-testing:2.1.0")
 
+    // android debug db
+    debugImplementation("com.amitshekhar.android:debug-db:1.0.6")
+
     testImplementation 'junit:junit:4.12'
 
     androidTestImplementation 'androidx.test:runner:1.2.0'
