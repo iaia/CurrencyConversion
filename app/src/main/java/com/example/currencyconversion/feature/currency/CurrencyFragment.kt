@@ -27,7 +27,7 @@ class CurrencyFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_currency, container, false)
         viewModel.currencies.observe(viewLifecycleOwner, Observer {
             //val adapter = SimpleCursorAdapter(context, android.R.layout.simple_spinner_item, listOf("code", "name"), binding.sCurrencies.id)
-            val adapter = ArrayAdapter(context, android.R.layout.simple_spinner_item, it)
+            val adapter = ArrayAdapter(context, R.layout.view_simple_spinner_item, it)
             binding.sCurrencies.adapter = adapter
         })
         viewModel.selectedCurrency.observe(viewLifecycleOwner, Observer {

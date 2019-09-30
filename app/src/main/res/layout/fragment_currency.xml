@@ -20,9 +20,9 @@
             android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            android:padding="12dp"
+            android:layout_margin="12dp" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
