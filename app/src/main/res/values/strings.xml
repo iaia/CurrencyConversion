@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">CurrencyConversion</string>
+    <string name="source_currency">Source Currency</string>
+    <string name="dist">Dist</string>
+    <string name="rate">Rate</string>
+    <string name="calculate_result">Calculate Result</string>
 </resources>
