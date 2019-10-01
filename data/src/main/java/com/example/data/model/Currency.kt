@@ -14,4 +14,6 @@ data class Currency(
 @Serializable
 data class CurrenciesResult(
     var currencies: Map<String, String>
-)
+) {
+    constructor() : this(emptyMap())
+}
