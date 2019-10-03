@@ -11,6 +11,8 @@ import org.hamcrest.CoreMatchers.`is`
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Before
 import org.junit.Test
+import org.mockito.ArgumentMatchers.anyLong
+import org.mockito.ArgumentMatchers.anyString
 import org.mockito.Mock
 import org.mockito.MockitoAnnotations
 
@@ -44,7 +46,7 @@ class LiveRepositoryUnitTest {
 
     @Test
     fun shouldCallGetLive_whenNoLocalData() {
-        whenever(liveDao.getRecent("USD")).thenReturn(null)
+        whenever(liveDao.getRecent(anyString(), anyLong())).thenReturn(null)
         runBlocking {
             repository.getRates("USD")
             verify(service).getLive(any())
