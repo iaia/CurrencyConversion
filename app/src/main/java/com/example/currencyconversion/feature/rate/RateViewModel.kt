@@ -13,13 +13,18 @@ class RateViewModel(
 ) : ViewModel() {
     val rates = MutableLiveData<List<Rate>>()
     var amount = 123.4F
+    var currency = "USD"
 
     fun init() {}
 
     fun reGetRate(currency: String) {
         if (currency.length != 3) return
+        this.currency = currency
         viewModelScope.launch(Dispatchers.IO) {
-            changeSource(liveRepository.getRates(currency), currency)
+            changeSource(
+                liveRepository.getRates(this@RateViewModel.currency),
+                this@RateViewModel.currency
+            )
         }
     }
 
